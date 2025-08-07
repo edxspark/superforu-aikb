@@ -1,0 +1,26 @@
+export default {
+  'login.form.title': 'Login',
+  'login.form.no.account': 'No account yet？',
+  'login.form.have.account': 'Already having account',
+  'login.form.account.title': 'Account',
+  'login.form.password.title': 'Password',
+  'login.form.userName.errMsg': 'Username cannot be empty',
+  'login.form.password.errMsg': 'Password cannot be empty',
+  'login.form.login.errMsg': 'Login error, refresh and try again',
+  'login.form.login.success': 'welcome to use',
+  'login.form.userName.placeholder': 'Account',
+  'login.form.password.placeholder': 'Password',
+  'login.form.rememberPassword': 'Remember password',
+  'login.form.forgetPassword': 'Forgot password',
+  'login.form.login': 'Login',
+  'register.form.register': 'Register',
+  'login.form.register': 'register account',
+  'login.banner.slogan1': 'Out-of-the-box high-quality template',
+  'login.banner.subSlogan1':
+    'Rich page templates, covering most typical business scenarios',
+  'login.banner.slogan2': 'Built-in solutions to common problems',
+  'login.banner.subSlogan2':
+    'Internationalization, routing configuration, state management everything',
+  'login.banner.slogan3': 'Access visualization enhancement tool AUX',
+  'login.banner.subSlogan3': 'Realize flexible block development',
+};

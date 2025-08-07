@@ -1,0 +1,17 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+.history
+*.local
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+.idea
+.vscode
+pnpm-lock.yam   l
+yarn.lock
+.log
+
