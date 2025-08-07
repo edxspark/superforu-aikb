@@ -1,0 +1,52 @@
+PUT /km_docs
+{
+  "settings":{
+    "number_of_shards":5
+  },
+  "mappings": {
+    "properties": {
+      "fileName":{
+        "type": "keyword"
+      },
+      "fileId":{
+        "type": "keyword"
+      },
+      "catalogIds":{
+         "type": "keyword"
+      },
+      "linkFileContentId":{
+        "type": "keyword"
+      },
+      "linkKmId":{
+        "type": "keyword"
+      },
+      "linkFileTypeCode":{
+        "type": "keyword"
+      },
+      "linkFileTypeName":{
+        "type": "keyword"
+      },
+      "fileIcon":{
+        "type": "keyword"
+      },
+      "fileIconColor":{
+        "type": "keyword"
+      },
+      "createBy":{
+        "type": "keyword"
+      },
+      "lastUpdateTime":{
+        "type":"date",
+        "format":"yyyy-MM-dd HH:mm:ss"
+      },
+      "status":{
+         "type": "keyword"
+      },
+      "content":{
+        "type": "text",
+        "analyzer": "ik_max_word",
+        "index":true
+      }
+    }
+  }
+}

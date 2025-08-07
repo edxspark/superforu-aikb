@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.dromara.kb.folderFile.mapper.FolderFileMapper">
+
+    <!-- 根据文件夹ID批量删除当前目录及下面文件夹和文件-->
+    <delete id="deleteByFolderId">
+           update kb_folder_file set status = 1,link_cycle_id=#{cycleId}
+                  where catalog_ids like #{catalogIds}
+    </delete>
+
+    <!--批量修改文件夹&文件AI状态-->
+    <!--条件：status=0(使用中) 所属知识库的文件全部重新向量化或停止向量化-->
+    <update id="updateFolderFileAiStatus">
+            update kb_folder_file set ai_status=#{aiStatus}
+                   where link_km_id=#{kmId} and status=0
+    </update>
+</mapper>

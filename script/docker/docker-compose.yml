@@ -1,0 +1,65 @@
+version: '3'
+services:
+  ruoyi-server1:
+    image: ruoyi/ruoyi-server:5.1.1
+    container_name: ruoyi-server1
+    ports:
+      # api 端口
+      - "8080:8080"
+    environment:
+      # 时区上海
+      TZ: Asia/Shanghai
+      SERVER_PORT: 8080
+    volumes:
+      # 配置文件
+      - /docker/server1/logs/:/ruoyi/server/logs/
+      # skywalking 探针
+#      - /docker/skywalking/agent/:/ruoyi/skywalking/agent
+    privileged: true
+    network_mode: "host"
+
+  ruoyi-server2:
+    image: ruoyi/ruoyi-server:5.1.1
+    container_name: ruoyi-server2
+    ports:
+      # api 端口
+      - "8081:8081"
+    environment:
+      # 时区上海
+      TZ: Asia/Shanghai
+      SERVER_PORT: 8081
+    volumes:
+      # 配置文件
+      - /docker/server2/logs/:/ruoyi/server/logs/
+      # skywalking 探针
+#      - /docker/skywalking/agent/:/ruoyi/skywalking/agent
+    privileged: true
+    network_mode: "host"
+
+  ruoyi-monitor-admin:
+    image: ruoyi/ruoyi-monitor-admin:5.1.1
+    container_name: ruoyi-monitor-admin
+    environment:
+      # 时区上海
+      TZ: Asia/Shanghai
+    volumes:
+      # 配置文件
+      - /docker/monitor/logs/:/ruoyi/monitor/logs
+    privileged: true
+    network_mode: "host"
+
+  ruoyi-powerjob-server:
+    image: ruoyi/ruoyi-powerjob-server:5.1.1
+    container_name: ruoyi-powerjob-server
+    environment:
+      # 时区上海
+      TZ: Asia/Shanghai
+    ports:
+      - "7700:7700"
+      - "10086:10086"
+      - "10010:10010"
+    volumes:
+      - /docker/powerjob/logs/:/ruoyi/powerjob/logs
+    privileged: true
+    network_mode: "host"
+
